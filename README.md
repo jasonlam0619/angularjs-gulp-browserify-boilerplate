@@ -10,7 +10,7 @@ Fork 自这个项目 [jakemmarsh/angularjs-gulp-browserify-boilerplate](https://
 **使用：**
 
 1. `npm install`
-2. 若第三步报错，尝试 `npm rebuild node-sass`
+2. 若第三步报错，视情况尝试 `npm rebuild node-sass` 或 `npm install estraverse-fb`
 3. `npm run dev`
 4. 最终生产上线时 `npm run build`（注意 `build` 不会启用 browser-sync，开发时应只用 `dev`）
 
