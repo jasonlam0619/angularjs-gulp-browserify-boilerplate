@@ -16,7 +16,6 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
   });
 
   $urlRouterProvider.otherwise('/');
-
 }
 
 export default OnConfig;

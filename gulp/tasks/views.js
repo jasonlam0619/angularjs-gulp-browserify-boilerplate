@@ -4,8 +4,7 @@ import merge         from 'merge-stream';
 import templateCache from 'gulp-angular-templatecache';
 
 // Views task
-gulp.task('views', function() {
-
+gulp.task('views', () => {
   // Put our index.html in the dist folder
   const indexFile = gulp.src(config.views.index)
     .pipe(gulp.dest(config.buildDir));
@@ -18,5 +17,4 @@ gulp.task('views', function() {
     .pipe(gulp.dest(config.views.dest));
 
   return merge(indexFile, views);
-
 });

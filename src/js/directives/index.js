@@ -6,7 +6,7 @@ const directives = bulk(__dirname, ['./**/!(*index|*.spec).js']);
 
 function declare(directiveMap) {
   Object.keys(directiveMap).forEach((key) => {
-    let item = directiveMap[key];
+    const item = directiveMap[key];
 
     if (!item) {
       return;

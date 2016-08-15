@@ -6,7 +6,7 @@ const services = bulk(__dirname, ['./**/!(*index|*.spec).js']);
 
 function declare(serviceMap) {
   Object.keys(serviceMap).forEach((key) => {
-    let item = serviceMap[key];
+    const item = serviceMap[key];
 
     if (!item) {
       return;

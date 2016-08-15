@@ -7,8 +7,7 @@ import handleErrors from '../util/handleErrors';
 import browserSync  from 'browser-sync';
 import autoprefixer from 'gulp-autoprefixer';
 
-gulp.task('styles', function () {
-
+gulp.task('styles', () => {
   const createSourcemap = !global.isProd || config.styles.prodSourcemap;
 
   return gulp.src(config.styles.src)
@@ -24,9 +23,8 @@ gulp.task('styles', function () {
     }))
     .pipe(gulpif(
       createSourcemap,
-      sourcemaps.write( global.isProd ? './' : null ))
+      sourcemaps.write(global.isProd ? './' : null))
     )
     .pipe(gulp.dest(config.styles.dest))
     .pipe(browserSync.stream());
-
 });

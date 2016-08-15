@@ -1,9 +1,5 @@
 function ExampleFilter() {
-
-  return function(input) {
-    return input.replace(/keyboard/ig,'leopard');
-  };
-
+  return (input) => input.replace(/keyboard/ig, 'leopard');
 }
 
 export default {

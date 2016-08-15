@@ -1,4 +1,76 @@
-angularjs-gulp-browserify-boilerplate
+## angularjs-gulp-browserify-boilerplate
+
+Fork 自这个项目 [jakemmarsh/angularjs-gulp-browserify-boilerplate](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)，作了以下改动：
+
+* 根据 [3N 前端编码规范-JavaScript](http://wiki.3ncto.com/cs-web/JavaScript.html) 实现了对应的 ESLint 规则；
+* 按照上述代码规范改写了现有代码；
+* 暂时去除端对端测试、单元测试等测试任务；
+* 改进了一些 Gulp 任务和 npm 模块格式。
+
+**使用：**
+
+1. `npm install`
+2. 若第三步报错，尝试 `npm rebuild node-sass`
+3. `npm run dev`
+4. 最终生产上线时 `npm run build`（注意 `build` 不会启用 browser-sync，开发时应只用 `dev`）
+
+**几点值得提的**：
+
+##### Angular 架构
+
+AngularJS 脚本悉数位于 `/src/js`，具备下列结构：
+
+```
+/controllers
+  index.js   （加载所有 controllers 的主控制器，在 main.js 中被加载）
+  example.js
+/directives
+  index.js   （加载所有 directives 的主指令，在 main.js 中被加载）
+  example.js
+/filters
+  index.js   （加载所有 filters 的主过滤器，在 main.js 中被加载）
+  example.js
+/services
+  index.js   （加载所有 services 的主服务，在 main.js 中被加载）
+  example.js
+constants.js （常量的配置）
+main.js      （Browserify 读取的主入口脚本，并配置了应用基本信息）
+on_run.js    （app.run 时需要执行的函数和逻辑）
+on_config.js （app.config 时需要执行的函数和逻辑，以及所有路由的定义）
+templates.js （Gulp 编译视图时自动生成的）
+```
+
+##### 模块组织
+
+放置在对应目录的 Controllers、services、directives 等，该目录下的 `index.js` 会通过 `bulk-require` 自动引入它们。所有模块都应遵循以下格式导出（export）：
+
+```javascript
+const ExampleModule = () => {};
+
+export default {
+  name: 'ExampleModule',
+  fn: ExampleModule
+};
+
+```
+
+##### 依赖注入（DI）
+
+DI 利用 `ng-annotate` 库以避免压缩代码时依赖参数失效。需要 DI 的函数／模块都应在开头遵循以下代码：
+
+```js
+function MyService($http) {
+  'ngInject';
+  ...
+}
+```
+
+Gulp 任务会自动处理依赖注入，你所做的只有一步——在函数参数中声明依赖。
+
+***
+
+其他请见原项目的 README：
+
 =====================================
 [![Build Status](https://travis-ci.org/jakemmarsh/angularjs-gulp-browserify-boilerplate.svg)](https://travis-ci.org/jakemmarsh/angularjs-gulp-browserify-boilerplate) [![devDependency Status](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate#info=devDependencies)
 

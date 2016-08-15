@@ -1,7 +1,6 @@
 import express from 'express';
 
-export default function testServer({port, dir}) {
-
+export default function testServer({ port, dir }) {
   const app = express();
 
   app.use(express.static(dir));
@@ -11,5 +10,4 @@ export default function testServer({port, dir}) {
       resolve(server);
     });
   });
-
 }

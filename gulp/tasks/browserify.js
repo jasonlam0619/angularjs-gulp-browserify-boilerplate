@@ -19,34 +19,14 @@ import config       from '../config';
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
-
   const shouldCreateSourcemap = !global.isProd || config.browserify.prodSourcemap;
 
   let bundler = browserify({
-    entries: [config.sourceDir + 'js/' + file],
+    entries: [`${config.sourceDir}js/${file}`],
     debug: shouldCreateSourcemap,
     cache: {},
     packageCache: {},
     fullPaths: !global.isProd
-  });
-
-  if ( !global.isProd ) {
-    bundler = watchify(bundler);
-
-    bundler.on('update', rebundle);
-  }
-
-  const transforms = [
-    { name: babelify, options: {} },
-    { name: debowerify, options: {} },
-    { name: ngAnnotate, options: {} },
-    { name: 'brfs', options: {} },
-    { name: bulkify, options: {} },
-    { name: envify, options: {} }
-  ];
-
-  transforms.forEach(function(transform) {
-    bundler.transform(transform.name, transform.options);
   });
 
   function rebundle() {
@@ -69,12 +49,28 @@ function buildScript(file) {
       .pipe(browserSync.stream());
   }
 
-  return rebundle();
+  if (!global.isProd) {
+    bundler = watchify(bundler);
 
+    bundler.on('update', rebundle);
+  }
+
+  const transforms = [
+    { name: babelify, options: {} },
+    { name: debowerify, options: {} },
+    { name: ngAnnotate, options: {} },
+    { name: 'brfs', options: {} },
+    { name: bulkify, options: {} },
+    { name: envify, options: {} }
+  ];
+
+  transforms.forEach((transform) => {
+    bundler.transform(transform.name, transform.options);
+  });
+
+  return rebundle();
 }
 
-gulp.task('browserify', function() {
-
-  return buildScript('main.js');
-
-});
+gulp.task('browserify', () =>
+  buildScript('main.js')
+);

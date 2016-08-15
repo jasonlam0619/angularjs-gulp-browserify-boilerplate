@@ -1,5 +1,4 @@
 function ExampleDirective() {
-
   return {
     restrict: 'EA',
     templateUrl: 'directives/example.html',
@@ -9,7 +8,7 @@ function ExampleDirective() {
     },
     link: (scope, element) => {
       element.on('click', () => {
-        window.alert('Element clicked: ' + scope.message);
+        window.alert(`Element clicked: ${scope.message}`);
       });
     }
   };

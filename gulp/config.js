@@ -4,31 +4,31 @@ export default {
   UIPort: 3001,
   testPort: 3002,
 
-  sourceDir: './app/',
+  sourceDir: './src/',
   buildDir: './build/',
 
   styles: {
-    src: 'app/styles/**/*.scss',
+    src: 'src/styles/**/*.scss',
     dest: 'build/css',
     prodSourcemap: false,
-    sassIncludePaths: []
+    sassIncludePaths: [],
   },
 
   scripts: {
-    src: 'app/js/**/*.js',
+    src: 'src/js/**/*.js',
     dest: 'build/js',
     test: 'test/**/*.js',
-    gulp: 'gulp/**/*.js'
+    gulp: 'gulp/**/*.js',
   },
 
   images: {
-    src: 'app/images/**/*',
-    dest: 'build/images'
+    src: 'src/images/**/*',
+    dest: 'build/images',
   },
 
   fonts: {
-    src: ['app/fonts/**/*'],
-    dest: 'build/fonts'
+    src: ['src/fonts/**/*'],
+    dest: 'build/fonts',
   },
 
   assetExtensions: [
@@ -42,35 +42,35 @@ export default {
     'otf',
     'ttc',
     'ttf',
-    'woff2?'
+    'woff2?',
   ],
 
   views: {
-    index: 'app/index.html',
-    src: 'app/views/**/*.html',
-    dest: 'app/js'
+    index: 'src/index.html',
+    src: 'src/views/**/*.html',
+    dest: 'src/js',
   },
 
   gzip: {
     src: 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
     dest: 'build/',
-    options: {}
+    options: {},
   },
 
   browserify: {
     bundleName: 'main.js',
-    prodSourcemap: false
+    prodSourcemap: false,
   },
 
   test: {
     karma: 'test/karma.conf.js',
-    protractor: 'test/protractor.conf.js'
+    protractor: 'test/protractor.conf.js',
   },
 
-  init: function() {
+  init() {
     this.views.watch = [
       this.views.index,
-      this.views.src
+      this.views.src,
     ];
 
     return this;

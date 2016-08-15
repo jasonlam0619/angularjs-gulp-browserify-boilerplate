@@ -5,12 +5,10 @@ import gulpif      from 'gulp-if';
 import imagemin    from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 
-gulp.task('images', function() {
-
-  return gulp.src(config.images.src)
+gulp.task('images', () => 
+  gulp.src(config.images.src)
     .pipe(changed(config.images.dest)) // Ignore unchanged files
     .pipe(gulpif(global.isProd, imagemin())) // Optimize
     .pipe(gulp.dest(config.images.dest))
-    .pipe(browserSync.stream());
-
-});
+    .pipe(browserSync.stream())
+);

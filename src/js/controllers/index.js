@@ -6,7 +6,7 @@ const controllers = bulk(__dirname, ['./**/!(*index|*.spec).js']);
 
 function declare(controllerMap) {
   Object.keys(controllerMap).forEach((key) => {
-    let item = controllerMap[key];
+    const item = controllerMap[key];
 
     if (!item) {
       return;
