@@ -1,10 +1,10 @@
 ## angularjs-gulp-browserify-boilerplate
 
-[![Build Status](https://travis-ci.org/jasonlam0619/angularjs-gulp-browserify-boilerplate.svg)](https://travis-ci.org/jasonlam0619/angularjs-gulp-browserify-boilerplate) [![devDependency Status](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate#info=devDependencies) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) 
+[![Build Status](https://travis-ci.org/jasonlam0619/angularjs-gulp-browserify-boilerplate.svg)](https://travis-ci.org/jasonlam0619/angularjs-gulp-browserify-boilerplate) [![https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate]](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate.svg) [![devDependency Status](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate#info=devDependencies) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) 
 
 Fork 自这个项目 [jakemmarsh/angularjs-gulp-browserify-boilerplate](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)，作了以下改动：
 
-* 更新了一些 npm 依赖包；
+* 更新了过时的 npm 依赖包：[![devDependency Status](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate#info=devDependencies)→[![devDependency Status](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jasonlam0619/angularjs-gulp-browserify-boilerplate#info=devDependencies)；
 * 根据 [3N 前端编码规范-JavaScript](http://wiki.3ncto.com/cs-web/JavaScript.html) 实现了对应的 ESLint 规则；
 * 按照上述代码规范改写了现有代码；
 * 暂时去除端对端测试、单元测试等测试任务；
