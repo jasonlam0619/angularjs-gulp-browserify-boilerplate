@@ -1,11 +1,11 @@
 {
   "name": "angularjs-gulp-browserify-boilerplate",
   "version": "1.7.0",
-  "author": "Jake Marsh <jakemmarsh@gmail.com>",
+  "author": "Jake Marsh <jakemmarsh@gmail.com> & Jason Lam<jasonlam0619@gmail.com>",
   "description": "Boilerplate using AngularJS, SASS, Gulp, and Browserify while also utilizing best practices.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git"
+    "url": "https://github.com/jasonlam0619/angularjs-gulp-browserify-boilerplate.git"
   },
   "license": "MIT",
   "keywords": [
@@ -14,9 +14,10 @@
     "browserify",
     "angular",
     "sass",
-    "karma",
-    "jasmine",
-    "protractor",
+    "babel",
+    "es6",
+    "es2015",
+    "eslint",
     "boilerplate"
   ],
   "private": false,
