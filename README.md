@@ -19,7 +19,7 @@ Fork 自这个项目 [jakemmarsh/angularjs-gulp-browserify-boilerplate](https://
 
 **几点值得提的**：
 
-##### Angular 架构
+#### Angular 架构
 
 AngularJS 脚本悉数位于 `/src/js`，具备下列结构：
 
@@ -43,7 +43,7 @@ on_config.js （app.config 时需要执行的函数和逻辑，以及所有路�
 templates.js （Gulp 编译视图时自动生成的）
 ```
 
-##### 模块组织
+#### 模块组织
 
 放置在对应目录的 Controllers、services、directives 等，该目录下的 `index.js` 会通过 `bulk-require` 自动引入它们。所有模块都应遵循以下格式导出（export）：
 
@@ -57,7 +57,7 @@ export default {
 
 ```
 
-##### 依赖注入（DI）
+#### 依赖注入（DI）
 
 DI 利用 `ng-annotate` 库以避免压缩代码时依赖参数失效。需要 DI 的函数／模块都应在开头遵循以下代码：
 
